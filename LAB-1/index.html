@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Descriptive QA System</title>
+    <style>
+        body {
+            background-image: url("/static/background.jpg");
+            background-size: cover;
+            background-position: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 700px;
+            margin: 100px auto;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: none;
+        }
+        input[type="submit"] {
+            margin-top: 15px;
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .answer-box {
+            margin-top: 30px;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Question-Answering System</h2>
+        <form method="POST">
+            <input type="text" name="question" placeholder="Type your question..." required>
+            <br>
+            <input type="submit" value="Get Answer">
+        </form>
+        {% if answer %}
+        <div class="answer-box">
+            <strong>Answer:</strong><br>
+            {{ answer }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
